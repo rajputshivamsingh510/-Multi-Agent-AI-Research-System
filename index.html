@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Research Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+<div class="desk">
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="masthead-row">
+      <h1 class="masthead-title">The Research Desk</h1>
+      <div class="masthead-meta">
+        <span id="case-no">CASE NO. — </span>
+        <span class="dot">·</span>
+        <span id="today-date"></span>
+      </div>
+    </div>
+    <p class="masthead-sub">Open a case on any topic. Our desk searches, reads, writes, and grades the file before it lands on yours.</p>
+  </header>
+
+  <!-- Intake form -->
+  <section class="intake card">
+    <div class="tab-cut" aria-hidden="true"></div>
+    <label class="intake-label" for="topic-input">OPEN A NEW CASE</label>
+    <form id="research-form" autocomplete="off">
+      <input
+        id="topic-input"
+        type="text"
+        name="topic"
+        placeholder="e.g. The economics of vertical farming"
+        required
+      />
+      <button type="submit" id="submit-btn">
+        <span class="btn-label">Open Case</span>
+        <span class="btn-arrow">&rarr;</span>
+      </button>
+    </form>
+  </section>
+
+  <!-- Status ticker -->
+  <section id="status-ticker" class="status-ticker hidden">
+    <span class="ticker-dot"></span>
+    <span id="ticker-text">Assembling the file&hellip;</span>
+  </section>
+
+  <!-- Error -->
+  <section id="error-box" class="error-box hidden"></section>
+
+  <!-- Results -->
+  <section id="results" class="results hidden">
+    <div class="report card">
+      <div class="tab-cut" aria-hidden="true"></div>
+      <div class="report-head">
+        <span class="report-eyebrow">FIELD REPORT</span>
+        <h2 id="report-topic" class="report-title">&mdash;</h2>
+      </div>
+      <div id="report-body" class="report-body"></div>
+    </div>
+
+    <aside class="critique card">
+      <div class="stamp" id="score-stamp">
+        <span id="stamp-score">–/10</span>
+        <span class="stamp-ring"></span>
+      </div>
+      <h3 class="critique-heading">Field Review</h3>
+      <div id="critique-body" class="critique-body"></div>
+    </aside>
+  </section>
+
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
